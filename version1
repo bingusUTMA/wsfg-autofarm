@@ -1,5 +1,5 @@
 local playerHead = game.Players.LocalPlayer.Character.Head
-coroutine.resume(coroutine.create(function()
+coroutine.resume(coroutine.create(function() -- credits to O97 on yt for the anti-afk method
    local bb=game:service'VirtualUser'
    game:service'Players'.LocalPlayer.Idled:connect(function()
    bb:CaptureController()bb:ClickButton2(Vector2.new())
