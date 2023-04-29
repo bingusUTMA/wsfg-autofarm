@@ -1,11 +1,33 @@
-local playerHead = game.Players.LocalPlayer.Character.Head
-while _G.toggle == true and wait() do
-    if not _G.toggle then break end
-    for i, v in pairs(game:GetService("Workspace").NewHome.BottomGround.souls:GetDescendants()) do
-            if v.Name == "TouchInterest" and v.Parent then
-            firetouchinterest(playerHead, v.Parent, 0)
+local head = game.Players.LocalPlayer.Character.Head
+
+coroutine.resume(coroutine.create(function()
+    while _G.toggle == true and wait() do
+        if not _G.toggle then break end
+        for i, v in pairs(game:GetService("Workspace").NewHome.BottomGround.souls:GetDescendants()) do
+                if v.Name == "TouchInterest" and v.Parent then
+                firetouchinterest(head, v.Parent, 0)
+                wait(0.1)
+                firetouchinterest(head, v.Parent, 1)
+            end
+        end
+        task.wait(0.1)
+    end
+end))
+
+coroutine.resume(coroutine.create(function()
+    function blatantAutofarm()
+    for i,v in pairs(game.Workspace:GetDescendants()) do
+        if v.Name == "TouchInterest" and v.Parent.Name == "Hitbox" then
+            firetouchinterest(head, v.Parent, 0)
             wait(0.1)
-            firetouchinterest(playerHead, v.Parent, 1)
+            firetouchinterest(head, v.Parent, 1)
         end
     end
+    task.wait(0.1)
+    end
+end))
+
+if _G.blatant == true then
+    if not _G.blatant then break end
+    blatantAutofarm()
 end
