@@ -26,7 +26,7 @@ coroutine.resume(coroutine.create(function()
     task.wait(0.1)
     end
 end))
-
-if _G.blatant == true then
+while _G.blatant == true do
+    wait(1)
     blatantAutofarm()
 end
