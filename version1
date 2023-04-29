@@ -15,18 +15,14 @@ coroutine.resume(coroutine.create(function()
 end))
 
 coroutine.resume(coroutine.create(function()
-    function blatantAutofarm()
-    for i,v in pairs(game.Workspace:GetDescendants()) do
-        if v.Name == "TouchInterest" and v.Parent.Name == "Hitbox" then
-            firetouchinterest(head, v.Parent, 0)
-            wait(0.1)
-            firetouchinterest(head, v.Parent, 1)
+    while _G.blatant == true do
+        for i,v in pairs(game.Workspace:GetDescendants()) do
+            if v.Name == "TouchInterest" and v.Parent.Name == "Hitbox" then
+                firetouchinterest(head, v.Parent, 0)
+                wait(0.1)
+                firetouchinterest(head, v.Parent, 1)
+            end
         end
-    end
     task.wait(0.1)
     end
 end))
-while _G.blatant == true do
-    wait(1)
-    blatantAutofarm()
-end
