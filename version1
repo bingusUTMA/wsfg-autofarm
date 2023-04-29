@@ -28,6 +28,5 @@ coroutine.resume(coroutine.create(function()
 end))
 
 if _G.blatant == true then
-    if not _G.blatant then break end
     blatantAutofarm()
 end
