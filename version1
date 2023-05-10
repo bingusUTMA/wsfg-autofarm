@@ -1,8 +1,8 @@
 local head = game.Players.LocalPlayer.Character.Head
 
 coroutine.resume(coroutine.create(function()
-    while _G.toggle == true and wait() do
-        if not _G.toggle then break end
+    while _G.normal == true and wait() do
+        if not _G.normal then break end
         for i, v in pairs(game:GetService("Workspace").NewHome.BottomGround.souls:GetDescendants()) do
                 if v.Name == "TouchInterest" and v.Parent then
                 firetouchinterest(head, v.Parent, 0)
@@ -16,6 +16,7 @@ end))
 
 coroutine.resume(coroutine.create(function()
     while _G.blatant == true do
+        if not _G.blatant then break end
         for i,v in pairs(game.Workspace:GetDescendants()) do
             if v.Name == "TouchInterest" and v.Parent.Name == "Hitbox" then
                 firetouchinterest(head, v.Parent, 0)
